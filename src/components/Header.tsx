@@ -19,6 +19,9 @@ const Header: FC = () => {
     useEffect(() => {
         if(data) {
             setAuth(data)
+        }else{
+            router.replace('/');
+            setAuth(null)
         }
     }, [data])
 

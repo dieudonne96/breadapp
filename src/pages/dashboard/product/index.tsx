@@ -1,13 +1,17 @@
+import { useAtom } from "jotai";
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import Layout from "../../../components/Layout";
 import Search from "../../../components/Search";
-import { useProducts } from "../../../hooks/useProduct";
+import { useProductByBusiness } from "../../../hooks/useProduct";
+import { userAtom } from "../../../provider/atom";
 
 const Product: NextPage = () => {
 
-    const { data } = useProducts();
+    const [auth] = useAtom(userAtom)
+
+    const { data } = useProductByBusiness(auth?.businessId);
     const { register } = useForm()
 
     return (

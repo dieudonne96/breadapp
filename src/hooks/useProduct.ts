@@ -8,6 +8,10 @@ export const useProducts = () => {
     return useSWR(`/api/product`, fetcher)
 }
 
+export const useProductByBusiness = (id : string | null = null) => {
+    return useSWR<Product[]>([id ? `/api/product/business/${id}` : null], fetcher)
+}
+
 export const useProduct = (id : string | null = null) => {
     return useSWR<Product>([id ? `/api/product/${id}` : null], fetcher)
 }
