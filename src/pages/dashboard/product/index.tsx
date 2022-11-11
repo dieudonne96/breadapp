@@ -24,6 +24,7 @@ const Product: NextPage = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Description</th>
+                            <th>product Id</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -34,6 +35,7 @@ const Product: NextPage = () => {
                                     <th>{index + 1}</th>
                                     <td>{name}</td>
                                     <td>{`${description}`.substring(0,20) + " ..."}</td>
+                                    <td>{id}</td>
                                     <td><Link href={`/dashboard/product/${id}`}>View</Link></td>
                                 </tr>
                             ))
