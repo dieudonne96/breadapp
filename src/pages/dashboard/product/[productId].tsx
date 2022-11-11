@@ -1,4 +1,4 @@
-import { NextPage } from "next"
+import type { NextPage } from "next"
 import { useRouter } from "next/router"
 import Layout from "../../../components/Layout"
 import { useProduct } from "../../../hooks/useProduct"
@@ -17,9 +17,9 @@ const ProductDetail: NextPage = () => {
       // download QR code
   const downloadQRCode = () => {
     if(qrRef.current) {
-        let canvas = qrRef.current.querySelector("canvas");
-        let image = canvas.toDataURL("image/png");
-        let anchor = document.createElement("a");
+        const canvas = qrRef.current.querySelector("canvas");
+        const image = canvas.toDataURL("image/png");
+        const anchor = document.createElement("a");
         anchor.href = image;
         anchor.download = `qr-code.png`;
         document.body.appendChild(anchor);

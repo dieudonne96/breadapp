@@ -1,7 +1,8 @@
-import { Prisma, Category } from "@prisma/client";
+import type { Category } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import { type NextApiRequest, type NextApiResponse } from "next";
 import { prisma } from "../../../server/db/client";
-import { IError } from "../../../types/response";
+import type { IError } from "../../../types/response";
 
 export default async (req: NextApiRequest, res: NextApiResponse<Category | Category[] | IError>) => {
     try {

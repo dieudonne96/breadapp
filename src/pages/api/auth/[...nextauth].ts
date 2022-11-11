@@ -20,9 +20,11 @@ export const authOptions: NextAuthOptions = {
             where: { email: credentials.username },
             include: { auth : true, business : true }
           })
-          const verified = await argon2.verify(user.auth.password, credentials.password)
-          if (user && verified) {
-            return user;
+          if(user && user.auth){
+            const verified = await argon2.verify(user.auth.password, credentials.password)
+            if (user && verified) {
+              return user;
+            }
           }
         }
         return null

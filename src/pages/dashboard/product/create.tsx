@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import Layout from "../../../components/Layout";
 import { TfiArrowLeft } from 'react-icons/tfi'
 import { useForm } from "react-hook-form";

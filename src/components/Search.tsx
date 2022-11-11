@@ -1,4 +1,4 @@
-import { FieldValues, useForm, UseFormRegister } from 'react-hook-form';
+import type { FieldValues, UseFormRegister } from 'react-hook-form';
 import { CiSearch } from 'react-icons/ci';
 
 const Search : React.FC<Props> = ({ register}) => {

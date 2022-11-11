@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import { IUser } from '../types/user'
+import type { IUser } from '../types/user'
 import { fetcher } from './useProduct'
 
 export const useUser = (userId : string | null = null) => {

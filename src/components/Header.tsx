@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react"
-import { FC, useEffect } from "react"
+import type { FC} from "react";
+import { useEffect } from "react"
 import { signOut, signIn } from "next-auth/react"
 import Link from "next/link"
 import { useUser } from "../hooks/useUser"

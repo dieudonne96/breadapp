@@ -1,6 +1,6 @@
-import { Product } from '@prisma/client'
-import useSWR, { mutate, useSWRConfig } from 'swr'
-import { IBlockchain } from '../types/product'
+import type { Product } from '@prisma/client'
+import useSWR, { mutate } from 'swr'
+import type { IBlockchain } from '../types/product'
 
 export const fetcher = (url : any) => fetch(url).then(r => r.json())
 

@@ -1,10 +1,7 @@
-import { NextPage } from "next";
-import { useSession } from "next-auth/react";
+import type { NextPage } from "next";
 import Layout from "../../components/Layout";
 
 const Dashboard: NextPage = () => {
-    
-    const { data: session, status } = useSession()
 
     return(
         <Layout>

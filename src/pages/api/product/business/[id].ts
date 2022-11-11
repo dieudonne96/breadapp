@@ -1,7 +1,7 @@
 import { Prisma } from "@prisma/client";
 import { type NextApiRequest, type NextApiResponse } from "next";
 import { prisma } from "../../../../server/db/client";
-import { Product } from "@prisma/client";
+import type { Product } from "@prisma/client";
 
 export default async (req: NextApiRequest, res: NextApiResponse<Product[] | Product | { message : string }>) => {
     try {

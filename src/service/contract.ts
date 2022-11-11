@@ -1,5 +1,5 @@
-import { ethers } from "ethers";
-import { contractABI } from "../utils/constants";
+import {ethers} from "ethers";
+import {contractABI} from "../utils/constants";
 
 export const getContract = async () : Promise<ethers.Contract>  => {
 

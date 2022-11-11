@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import Layout from "../../../components/Layout";
@@ -7,8 +7,8 @@ import { useProducts } from "../../../hooks/useProduct";
 
 const Product: NextPage = () => {
 
-    const { data, isValidating } = useProducts();
-    const { register, handleSubmit } = useForm()
+    const { data } = useProducts();
+    const { register } = useForm()
 
     return (
         <Layout>

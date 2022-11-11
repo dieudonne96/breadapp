@@ -1,6 +1,5 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import Search from "../components/Search";
 import { QrReader } from 'react-qr-reader';
 import { useState } from "react";
@@ -13,7 +12,7 @@ const Home: NextPage = () => {
  const { handleSubmit, register }  = useForm()
  const [productId, setProductId] = useState<string | null>(null)
 
- const {data, isValidating} = useProduct(productId)
+ const {data} = useProduct(productId)
  const {data: blockchain, isValidating:loading} = useProductBlockchain(productId)
 
  const onSubmit = ({ search }: any) => {
@@ -46,6 +45,12 @@ const Home: NextPage = () => {
                   if(result) {
                       setProductId(result.getText())
                       setScan(false)
+                      return;
+                  }
+
+                  if(error) {
+                      console.log("error : ", error.message)
+                      alert(error.message)
                   }
                 }} 
               constraints={{facingMode : 'user'}} />
