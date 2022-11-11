@@ -1,5 +1,6 @@
 import { Product } from '@prisma/client'
 import useSWR, { mutate, useSWRConfig } from 'swr'
+import { IBlockchain } from '../types/product'
 
 export const fetcher = (url : any) => fetch(url).then(r => r.json())
 
@@ -9,6 +10,10 @@ export const useProducts = () => {
 
 export const useProduct = (id : string | null = null) => {
     return useSWR<Product>([id ? `/api/product/${id}` : null], fetcher)
+}
+
+export const useProductBlockchain = (id : string | null = null) => {
+    return useSWR<IBlockchain>([id ? `/api/product/detail/${id}` : null], fetcher)
 }
 
 export const useMuateProducts = (data : any) => {

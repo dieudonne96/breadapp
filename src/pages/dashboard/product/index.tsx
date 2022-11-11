@@ -8,7 +8,7 @@ import { useProducts } from "../../../hooks/useProduct";
 const Product: NextPage = () => {
 
     const { data, isValidating } = useProducts();
-    const { register } = useForm()
+    const { register, handleSubmit } = useForm()
 
     return (
         <Layout>
