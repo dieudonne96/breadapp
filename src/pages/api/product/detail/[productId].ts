@@ -19,7 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         }if(req.method === "PUT"){
             const { items } = req.body;
             const product = await contract.setProductDetail(items,productId,{gasLimit: 1000000});
-            res.status(200).json(product);
+            res.status(200).json({ message: "Product updated successfully" });
         }
         else{
             res.status(405).json({ message : 'Method not allowed' })
