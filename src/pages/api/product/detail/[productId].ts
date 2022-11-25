@@ -6,8 +6,8 @@ import { getContract } from "../../../../service/contract";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         const productId = req.query.productId as string;
+        const contract = await getContract();
         if(req.method === "GET"){
-            const contract = await getContract();
             const product = await contract.getProductDetail(productId);
             const structuredData = {
                 items : product.items.map((item : any) => JSON.parse(item.replace(/'/g, '"'))),
@@ -16,7 +16,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 sender: product.sender,
             }
             res.status(200).json(structuredData);
-        }else{
+        }if(req.method === "PUT"){
+            const { items } = req.body;
+            const product = await contract.setProductDetail(items,productId,{gasLimit: 1000000});
+            res.status(200).json(product);
+        }
+        else{
             res.status(405).json({ message : 'Method not allowed' })
         }
     } catch (error) {
