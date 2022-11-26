@@ -74,7 +74,7 @@ const Home: NextPage = () => {
                 loading && productId && (<progress className="progress w-56"></progress>)
               }
               {
-                blockchain && blockchain.items.length > 0 ? (
+                blockchain && blockchain.items.length > 0 && (
                   <div className="card w-96 bg-base-100 shadow-xl border border-white">
                       <div className="card-body">
                           <h2 className="card-title">Blockchain Data</h2>
@@ -91,11 +91,7 @@ const Home: NextPage = () => {
                         </div>
                       </div>
                   </div> 
-                ) : (
-                  <div className="bg-warning card w-96 bg-base-100 shadow-xl border border-base-300">
-                    <p className="font-normal text-base-300 text-sm m-5">There is no data in the blockchain for this product.</p>
-                  </div>
-                )
+                ) 
               }
             </div>
         </div>
