@@ -22,8 +22,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Web 3.0</title>
-        <meta name="description" content="Web 3.0" />
+        <title>Bread DApp</title>
+        <meta name="description" content="Bread DApp" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container mx-auto flex min-h-screen flex-col items-center p-4">

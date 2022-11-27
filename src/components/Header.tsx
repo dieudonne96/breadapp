@@ -42,7 +42,7 @@ const Header: FC = () => {
             <div className="flex-1">
                 <a onClick={goHome} className={"btn btn-ghost normal-case text-xl " + `${isValidating && 'loading'}`}>
                     {
-                       auth && (auth?.business?.name ?? " WEB 3.0")
+                       auth && (auth?.business?.name ?? " Bread DApp")
                     }
                 </a>
             </div>
